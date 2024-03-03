@@ -1,6 +1,6 @@
-import 'package:flutter_xhs/api/api_client.dart';
-import 'package:flutter_xhs/models/card_detail_data.dart';
-import 'package:flutter_xhs/models/comment.dart';
+import 'package:xhs/api/api_client.dart';
+import 'package:xhs/models/card_detail_data.dart';
+import 'package:xhs/models/comment.dart';
 import 'package:get/get.dart';
 
 class IndexDetailController extends GetxController {

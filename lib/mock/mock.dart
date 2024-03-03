@@ -1,7 +1,7 @@
-import 'package:flutter_xhs/models/card_data.dart';
-import 'package:flutter_xhs/models/card_detail_data.dart';
-import 'package:flutter_xhs/models/comment.dart';
-import 'package:flutter_xhs/models/video.dart';
+import 'package:xhs/models/card_data.dart';
+import 'package:xhs/models/card_detail_data.dart';
+import 'package:xhs/models/comment.dart';
+import 'package:xhs/models/video.dart';
 
 class Mock {
   static List<CardData> indexData = [

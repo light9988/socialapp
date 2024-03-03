@@ -1,5 +1,5 @@
-import 'package:flutter_xhs/common/utils/public_utils.dart';
-import 'package:flutter_xhs/pages/video_page/video_controller.dart';
+import 'package:xhs/common/utils/public_utils.dart';
+import 'package:xhs/pages/video_page/video_controller.dart';
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {

@@ -1,7 +1,7 @@
-import 'package:flutter_xhs/constants/pages.dart';
-import 'package:flutter_xhs/pages/home_page/home_page.dart';
-import 'package:flutter_xhs/pages/index_page/index_detail_page/index_detail_page.dart';
-import 'package:flutter_xhs/pages/init_page/init_page.dart';
+import 'package:xhs/constants/pages.dart';
+import 'package:xhs/pages/home_page/home_page.dart';
+import 'package:xhs/pages/index_page/index_detail_page/index_detail_page.dart';
+import 'package:xhs/pages/init_page/init_page.dart';
 import 'package:get/get.dart';
 
 class Routes {

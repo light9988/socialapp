@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_xhs/api/api_client.dart';
-import 'package:flutter_xhs/constants/pages.dart';
-import 'package:flutter_xhs/models/card_data.dart';
+import 'package:xhs/api/api_client.dart';
+import 'package:xhs/constants/pages.dart';
+import 'package:xhs/models/card_data.dart';
 import 'package:get/get.dart';
 
 class IndexController extends GetxController with GetSingleTickerProviderStateMixin {

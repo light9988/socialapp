@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_xhs/constants/color_plate.dart';
-import 'package:flutter_xhs/models/card_data.dart';
+import 'package:xhs/constants/color_plate.dart';
+import 'package:xhs/models/card_data.dart';
 import 'package:get/get.dart';
 
 import 'index_controller.dart';

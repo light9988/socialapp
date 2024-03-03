@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_xhs/constants/color_plate.dart';
-import 'package:flutter_xhs/models/card_data.dart';
+import 'package:xhs/constants/color_plate.dart';
+import 'package:xhs/models/card_data.dart';
 import 'package:get/get.dart';
 
 import 'mine_controller.dart';
@@ -22,7 +22,8 @@ class MinePage extends StatelessWidget {
               //   title: Text("ddd"),
               // ),
               SliverOverlapAbsorber(
-                handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
+                handle:
+                    NestedScrollView.sliverOverlapAbsorberHandleFor(context),
                 sliver: SliverToBoxAdapter(child: _buildHeader()),
               ),
 
@@ -43,7 +44,11 @@ class MinePage extends StatelessWidget {
                         controller: controller.tabController,
                         tabs: const [
                           Tab(text: "Posts"),
-                          Tab(icon: Row(children: [Icon(Icons.lock, size: 16), Text("Collects")])),
+                          Tab(
+                              icon: Row(children: [
+                            Icon(Icons.lock, size: 16),
+                            Text("Collects")
+                          ])),
                           Tab(text: "likes"),
                         ]),
                   ),
@@ -57,7 +62,8 @@ class MinePage extends StatelessWidget {
                 key: const PageStorageKey<String>("Posts"),
                 slivers: <Widget>[
                   SliverOverlapInjector(
-                    handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
+                    handle: NestedScrollView.sliverOverlapAbsorberHandleFor(
+                        context),
                   ),
                   SliverToBoxAdapter(child: buildDiscoverPage()),
                 ],
@@ -91,12 +97,12 @@ class MinePage extends StatelessWidget {
             width: Get.width,
             height: 250,
             fit: BoxFit.cover,
-            errorBuilder: (_, __, ___) => Image.asset(
-              "assets/images/background.png",
-              width: Get.width,
-              height: 220,
-              fit: BoxFit.cover,
-            ),
+            // errorBuilder: (_, __, ___) => Image.asset(
+            //   "assets/images/bg.png",
+            //   width: Get.width,
+            //   height: 220,
+            //   fit: BoxFit.cover,
+            // ),
           ),
           Padding(
             padding: const EdgeInsets.only(
@@ -113,7 +119,7 @@ class MinePage extends StatelessWidget {
                   children: [
                     const Icon(Icons.menu, color: Colors.white),
                     Image.asset(
-                      "assets/images/share.png",
+                      "assets/images/bg.png",
                       width: 20,
                       height: 20,
                       color: Colors.white,
@@ -140,7 +146,7 @@ class MinePage extends StatelessWidget {
                               // child: Image.network(
                               //   "https://www.google.com/search?sca_esv=a7c4cc63e26e5a70&sxsrf=ACQVn09p83XOirj-UkEmmkn7EzgmRxKNRg:1709343558776&q=taylor+swift&tbm=isch&source=lnms&sa=X&ved=2ahUKEwiptvr8uNSEAxV3AjQIHT7cDTYQ0pQJegQIDRAB&biw=1440&bih=669&dpr=2#imgrc=G5JeSalK0CY9tM.jpeg",
                               child: Image.asset(
-                               "assets/images/profile.png",
+                                "assets/images/profile.png",
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -155,10 +161,12 @@ class MinePage extends StatelessWidget {
                                 padding: EdgeInsets.only(bottom: 4.0),
                                 child: Text(
                                   "Amy",
-                                  style: TextStyle(color: Colors.white, fontSize: 20),
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 20),
                                 ),
                               ),
-                              Text("ID：123456789", style: TextStyle(color: ColorPlate.grey)),
+                              Text("ID：123456789",
+                                  style: TextStyle(color: ColorPlate.grey)),
                             ],
                           ),
                         )
@@ -166,51 +174,74 @@ class MinePage extends StatelessWidget {
                     ),
                   ),
                 ),
-                const Text("App Developer | Photographer", style: TextStyle(color: Colors.white)),
+                const Text("App Developer | Photographer",
+                    style: TextStyle(color: Colors.white)),
                 Padding(
                   padding: const EdgeInsets.only(top: 6.0, bottom: 10),
                   child: Row(
                     children: [
                       Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
-                        decoration: const ShapeDecoration(shape: StadiumBorder(), color: ColorPlate.black6),
-                        child: const Text("Lion", style: TextStyle(color: Colors.white, fontSize: 10)),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 8, vertical: 2),
+                        decoration: const ShapeDecoration(
+                            shape: StadiumBorder(), color: ColorPlate.black6),
+                        child: const Text("Lion",
+                            style:
+                                TextStyle(color: Colors.white, fontSize: 10)),
                       ),
                       Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
-                        decoration: const ShapeDecoration(shape: StadiumBorder(), color: ColorPlate.black6),
-                        child: const Text("United States", style: TextStyle(color: Colors.white, fontSize: 10)),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 8, vertical: 2),
+                        decoration: const ShapeDecoration(
+                            shape: StadiumBorder(), color: ColorPlate.black6),
+                        child: const Text("United States",
+                            style:
+                                TextStyle(color: Colors.white, fontSize: 10)),
                       ),
                     ],
                   ),
                 ),
                 Row(
                   children: [
-                    const Expanded(
-                      child: Row(
+                    // const Expanded(
+                      Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Column(
                             children: [
-                              Text("0", style: TextStyle(color: Colors.white, fontSize: 12)),
-                              Text("Following", style: TextStyle(color: Colors.white, fontSize: 12))
+                              Text("1",
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 12)),
+                              Text("Following",
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 12))
                             ],
                           ),
+                          SizedBox(width: 10),
                           Column(
                             children: [
-                              Text("1", style: TextStyle(color: Colors.white, fontSize: 12)),
-                              Text("Followers", style: TextStyle(color: Colors.white, fontSize: 12))
+                              Text("300K",
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 12)),
+                              Text("Followers",
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 12))
                             ],
                           ),
+                          SizedBox(width: 10),
                           Column(
                             children: [
-                              Text("98", style: TextStyle(color: Colors.white, fontSize: 12)),
-                              Text("Likes&Col", style: TextStyle(color: Colors.white, fontSize: 12))
+                              Text("500K",
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 12)),
+                              Text("Likes&Col",
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 12))
                             ],
                           ),
                         ],
                       ),
-                    ),
+                    // ),
                     Expanded(
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.end,
@@ -218,12 +249,15 @@ class MinePage extends StatelessWidget {
                           Container(
                             height: 30,
                             alignment: Alignment.center,
-                            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 8, vertical: 2),
                             decoration: ShapeDecoration(
                               color: Colors.white.withOpacity(0.2),
-                              shape: const StadiumBorder(side: BorderSide(color: Colors.white)),
+                              shape: const StadiumBorder(
+                                  side: BorderSide(color: Colors.white)),
                             ),
-                            child: const Text("Profile", style: TextStyle(color: Colors.white)),
+                            child: const Text("Profile",
+                                style: TextStyle(color: Colors.white)),
                           ),
                           Container(
                             margin: const EdgeInsets.only(left: 20),
@@ -232,7 +266,8 @@ class MinePage extends StatelessWidget {
                             height: 30,
                             decoration: ShapeDecoration(
                               color: Colors.white.withOpacity(0.2),
-                              shape: const StadiumBorder(side: BorderSide(color: Colors.white)),
+                              shape: const StadiumBorder(
+                                  side: BorderSide(color: Colors.white)),
                             ),
                             child: Image.asset(
                               "assets/images/setting.png",
@@ -265,7 +300,9 @@ class MinePage extends StatelessWidget {
               children: controller.data.map((e) => buildCardItem(e)).toList(),
             ),
             Column(
-              children: controller.data.reversed.map((e) => buildCardItem(e)).toList(),
+              children: controller.data.reversed
+                  .map((e) => buildCardItem(e))
+                  .toList(),
             ),
           ],
         ),
@@ -288,7 +325,8 @@ class MinePage extends StatelessWidget {
         child: Column(
           children: [
             ClipRRect(
-              borderRadius: const BorderRadius.vertical(top: Radius.circular(4)),
+              borderRadius:
+                  const BorderRadius.vertical(top: Radius.circular(4)),
               child: Image.network(
                 cardData.cover,
                 width: Get.width / 2,
@@ -298,14 +336,16 @@ class MinePage extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4),
-              child: Text(cardData.content, maxLines: 2, overflow: TextOverflow.ellipsis),
+              child: Text(cardData.content,
+                  maxLines: 2, overflow: TextOverflow.ellipsis),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4),
               child: Row(
                 children: [
                   ClipOval(
-                    child: Image.network(cardData.avatar, width: 20, height: 20, fit: BoxFit.cover),
+                    child: Image.network(cardData.avatar,
+                        width: 20, height: 20, fit: BoxFit.cover),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 8.0),

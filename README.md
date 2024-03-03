@@ -1,8 +1,12 @@
-Social Media Mobile App
-This is a full stack social media mobile app developed using Flutter and Dart, offering a seamless cross-platform user experience. The app utilizes Firebase for authentication, storage, and real-time database management to enhance responsiveness and ensure interactive and engaging user interfaces.
 
+![demo page](assets/images/xhs.jpg)
 
-Installation
+- This is a full stack social media mobile app developed using Flutter and Dart, simulation to an exsiting app.
+- The app utilizes Firebase for authentication, storage, and real-time database management to enhance responsiveness and ensure interactive and engaging user interfaces.
+- If this is helpful to you, plase kindly support me here: 
+[![Donate](https://img.shields.io/badge/Donate-Venmo-blue.svg)](https://venmo.com/u/lightandlight)
+
+##Installation
 To run the app locally, follow these steps:
 
 - Clone the repository to your local machine.

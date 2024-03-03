@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_xhs/constants/color_plate.dart';
+import 'package:xhs/constants/color_plate.dart';
 import 'package:get/get.dart';
 
 import 'message_controller.dart';
@@ -80,7 +80,7 @@ class MessagePage extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("Messaage Notification", style: TextStyle(fontSize: 16)),
+                    Text("Message Notification", style: TextStyle(fontSize: 16)),
                     Text("Sunday", style: TextStyle(fontSize: 12, color: ColorPlate.black9)),
                   ],
                 ),

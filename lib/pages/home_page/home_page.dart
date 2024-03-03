@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_xhs/pages/index_page/index_page.dart';
-import 'package:flutter_xhs/pages/message_page/message_page.dart';
-import 'package:flutter_xhs/pages/mine_page/mine_page.dart';
-import 'package:flutter_xhs/pages/video_page/video_page.dart';
+import 'package:xhs/pages/index_page/index_page.dart';
+import 'package:xhs/pages/message_page/message_page.dart';
+import 'package:xhs/pages/mine_page/mine_page.dart';
+import 'package:xhs/pages/video_page/video_page.dart';
 import 'package:get/get.dart';
 
 import 'home_controller.dart';

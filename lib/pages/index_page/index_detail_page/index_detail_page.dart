@@ -1,9 +1,9 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_xhs/common/utils/date_utils.dart';
-import 'package:flutter_xhs/constants/color_plate.dart';
-import 'package:flutter_xhs/pages/index_page/index_detail_page/index_detail_controller.dart';
+import 'package:xhs/common/utils/date_utils.dart';
+import 'package:xhs/constants/color_plate.dart';
+import 'package:xhs/pages/index_page/index_detail_page/index_detail_controller.dart';
 import 'package:get/get.dart';
 
 class IndexDetailPage extends StatelessWidget {

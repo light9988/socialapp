@@ -1,8 +1,8 @@
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_xhs/constants/pages.dart';
-import 'package:flutter_xhs/pages/routes.dart';
+import 'package:xhs/constants/pages.dart';
+import 'package:xhs/pages/routes.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:firebase_auth/firebase_auth.dart';

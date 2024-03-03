@@ -1,4 +1,4 @@
-import 'package:flutter_xhs/mock/mock.dart';
+import 'package:xhs/mock/mock.dart';
 
 // use mock data
 class ApiClient {
