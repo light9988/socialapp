@@ -174,7 +174,7 @@ class MinePage extends StatelessWidget {
                     ),
                   ),
                 ),
-                const Text("App Developer | Photographer",
+                const Text("App Developer | Actor",
                     style: TextStyle(color: Colors.white)),
                 Padding(
                   padding: const EdgeInsets.only(top: 6.0, bottom: 10),

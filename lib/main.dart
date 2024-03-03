@@ -8,12 +8,14 @@ import 'package:get/get.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
+import 'package:xhs/pages/home_page/splash_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
+// deply to firebase:
 // void main() async {
 //   WidgetsFlutterBinding.ensureInitialized();
 //   // initialise app based on platform- web or mobile
@@ -59,6 +61,7 @@ class MyApp extends StatelessWidget {
           ),
           getPages: Routes.getPages,
           initialRoute: Pages.home,
+          // initialRoute: Pages.splash,
         );
       },
     );
