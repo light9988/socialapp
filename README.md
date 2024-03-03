@@ -2,8 +2,8 @@
 ![demo page](assets/images/xhs.png)
 
 - This is a full stack social media mobile app developed using Flutter and Dart, simulation to an exsiting app.
-- The app utilizes Firebase for authentication, storage, and real-time database management to enhance responsiveness and ensure interactive and engaging user interfaces.
-- If this is helpful to you, plase kindly support me here: 
+
+### If this is helpful to you, plase kindly support me here: 
 
 <p align="center">
   <a href="https://venmo.com/u/lightandlight">
@@ -12,8 +12,7 @@
 </p>
 
 
-## Installation
-To run the app locally, follow these steps:
+## To run the app locally, follow these steps:
 
 - Clone the repository to your local machine.
 - Make sure you have Flutter and Dart installed.
