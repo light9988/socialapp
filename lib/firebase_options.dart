@@ -44,38 +44,40 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCy5RTH5yRQ24embbvVAfPqI54uiEAHtPY',
-    appId: '1:388992575310:web:9a93767b5c20f822f1e01f',
-    messagingSenderId: '388992575310',
-    projectId: 'xhsf-d73ec',
-    authDomain: 'xhsf-d73ec.firebaseapp.com',
-    storageBucket: 'xhsf-d73ec.appspot.com',
-    measurementId: 'G-3V7NJSC9HH',
+    apiKey: 'AIzaSyD3E4p56aamFkyUY8hk4jy3ThVEgnl346Y',
+    appId: '1:796910062834:web:0b074963379ae122aa146b',
+    messagingSenderId: '796910062834',
+    projectId: 'xhs1-b4cdf',
+    authDomain: 'xhs1-b4cdf.firebaseapp.com',
+    storageBucket: 'xhs1-b4cdf.appspot.com',
+    measurementId: 'G-TJ6DYE2QMR',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDAQaxWmcbqPNzLROwooMzoDyqOh_uJM2s',
-    appId: '1:388992575310:android:82e8edd3ecc10632f1e01f',
-    messagingSenderId: '388992575310',
-    projectId: 'xhsf-d73ec',
-    storageBucket: 'xhsf-d73ec.appspot.com',
+    apiKey: 'AIzaSyBACnNDqdWzutpLYQGcDI7RM8SypOC7Gvw',
+    appId: '1:796910062834:android:8d8612bd5aee62b1aa146b',
+    messagingSenderId: '796910062834',
+    projectId: 'xhs1-b4cdf',
+    storageBucket: 'xhs1-b4cdf.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyA2cmDBpqsnz37Yi7uqKOtVLiZWBS6Z9BE',
-    appId: '1:388992575310:ios:01f92fc3a1e74206f1e01f',
-    messagingSenderId: '388992575310',
-    projectId: 'xhsf-d73ec',
-    storageBucket: 'xhsf-d73ec.appspot.com',
-    iosBundleId: 'com.huangweilong.flutterXhs',
+    apiKey: 'AIzaSyC7ajdSHkEmgv7UOF0IHWTYrnR-K5_n1-4',
+    appId: '1:796910062834:ios:bd83b7d543756c21aa146b',
+    messagingSenderId: '796910062834',
+    projectId: 'xhs1-b4cdf',
+    storageBucket: 'xhs1-b4cdf.appspot.com',
+    iosClientId: '796910062834-jp25mkmk3t69optqm9lpr8i6ut8tjfru.apps.googleusercontent.com',
+    iosBundleId: 'com.example.xhs',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyA2cmDBpqsnz37Yi7uqKOtVLiZWBS6Z9BE',
-    appId: '1:388992575310:ios:b2886ca75ad7d543f1e01f',
-    messagingSenderId: '388992575310',
-    projectId: 'xhsf-d73ec',
-    storageBucket: 'xhsf-d73ec.appspot.com',
-    iosBundleId: 'com.huangweilong.flutterXhs.RunnerTests',
+    apiKey: 'AIzaSyC7ajdSHkEmgv7UOF0IHWTYrnR-K5_n1-4',
+    appId: '1:796910062834:ios:0b348a0a3ddc4f31aa146b',
+    messagingSenderId: '796910062834',
+    projectId: 'xhs1-b4cdf',
+    storageBucket: 'xhs1-b4cdf.appspot.com',
+    iosClientId: '796910062834-vhi84brba7bejj0ek3j50115fi513mfh.apps.googleusercontent.com',
+    iosBundleId: 'com.example.xhs.RunnerTests',
   );
 }

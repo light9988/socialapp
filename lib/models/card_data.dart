@@ -6,7 +6,7 @@ part 'card_data.g.dart';
 class CardData {
   int id;
   int uid;
-  String cover; // 封面
+  String cover; 
   String content;
   String avatar;
   String nickname;

@@ -8,38 +8,38 @@ import 'package:get/get.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
-import 'package:xhs/pages/home_page/splash_screen.dart';
+import 'package:xhs/pages/splash_page/splash_page.dart';
 
-void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-  runApp(const MyApp());
-}
+// void main() {
+//   WidgetsFlutterBinding.ensureInitialized();
+//   runApp(const MyApp());
+// }
 
 // deply to firebase:
-// void main() async {
-//   WidgetsFlutterBinding.ensureInitialized();
-//   // initialise app based on platform- web or mobile
-//   if (kIsWeb) {
-//     await Firebase.initializeApp(
-//       options: const FirebaseOptions(
-//           apiKey: "AIzaSyCy5RTH5yRQ24embbvVAfPqI54uiEAHtPY",
-//           authDomain: "xhsf-d73ec.firebaseapp.com",
-//           projectId: "xhsf-d73ec",
-//           storageBucket: "xhsf-d73ec.appspot.com",
-//           messagingSenderId: "388992575310",
-//           appId: "1:388992575310:web:9a93767b5c20f822f1e01f",
-//           measurementId: "G-3V7NJSC9HH"),
-//     );
-//   } else {
-//     await Firebase.initializeApp();
-//   }
-//   runApp(const MyApp());
-//   // SystemUiOverlayStyle systemUiOverlayStyle = const SystemUiOverlayStyle(
-//   //   statusBarColor: Colors.transparent,
-//   //   statusBarIconBrightness: Brightness.dark,
-//   // );
-//   // SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
-// }
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  // initialise app based on platform- web or mobile
+  if (kIsWeb) {
+    await Firebase.initializeApp(
+      options: const FirebaseOptions(
+      apiKey: "AIzaSyD3E4p56aamFkyUY8hk4jy3ThVEgnl346Y",
+      authDomain: "xhs1-b4cdf.firebaseapp.com",
+      projectId: "xhs1-b4cdf",
+      storageBucket: "xhs1-b4cdf.appspot.com",
+      messagingSenderId: "796910062834",
+      appId: "1:796910062834:web:0b074963379ae122aa146b",
+      measurementId: "G-TJ6DYE2QMR"),
+    );
+  } else {
+    await Firebase.initializeApp();
+  }
+  runApp(const MyApp());
+  // SystemUiOverlayStyle systemUiOverlayStyle = const SystemUiOverlayStyle(
+  //   statusBarColor: Colors.transparent,
+  //   statusBarIconBrightness: Brightness.dark,
+  // );
+  // SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -60,8 +60,8 @@ class MyApp extends StatelessWidget {
             primarySwatch: Colors.blue,
           ),
           getPages: Routes.getPages,
-          initialRoute: Pages.home,
-          // initialRoute: Pages.splash,
+          // initialRoute: Pages.home,
+          initialRoute: Pages.splash,
         );
       },
     );
