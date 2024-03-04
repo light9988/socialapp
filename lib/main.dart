@@ -10,36 +10,37 @@ import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'package:xhs/pages/splash_page/splash_page.dart';
 
-// void main() {
-//   WidgetsFlutterBinding.ensureInitialized();
-//   runApp(const MyApp());
-// }
-
-// deply to firebase:
-void main() async {
+void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  // initialise app based on platform- web or mobile
-  if (kIsWeb) {
-    await Firebase.initializeApp(
-      options: const FirebaseOptions(
-      apiKey: "AIzaSyD3E4p56aamFkyUY8hk4jy3ThVEgnl346Y",
-      authDomain: "xhs1-b4cdf.firebaseapp.com",
-      projectId: "xhs1-b4cdf",
-      storageBucket: "xhs1-b4cdf.appspot.com",
-      messagingSenderId: "796910062834",
-      appId: "1:796910062834:web:0b074963379ae122aa146b",
-      measurementId: "G-TJ6DYE2QMR"),
-    );
-  } else {
-    await Firebase.initializeApp();
-  }
   runApp(const MyApp());
-  // SystemUiOverlayStyle systemUiOverlayStyle = const SystemUiOverlayStyle(
-  //   statusBarColor: Colors.transparent,
-  //   statusBarIconBrightness: Brightness.dark,
-  // );
-  // SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
 }
+
+// // deply to firebase:
+// void main() async {
+//   WidgetsFlutterBinding.ensureInitialized();
+//   // initialise app based on platform- web or mobile
+//   if (kIsWeb) {
+//     await Firebase.initializeApp(
+//       options: const FirebaseOptions(
+//       apiKey: String.fromEnvironment("FIREBASE_API_KEY"),
+//       authDomain: String.fromEnvironment("FIREBASE_AUTH_DOMAIN"),
+//       projectId: String.fromEnvironment("FIREBASE_PROJECT_ID"),
+//       storageBucket: String.fromEnvironment("FIREBASE_STORAGE_BUCKET"),
+//       messagingSenderId: String.fromEnvironment("FIREBASE_MESSAGING_SENDER_ID"),
+//       appId: String.fromEnvironment("FIREBASE_APP_ID"),
+//       measurementId: String.fromEnvironment("FIREBASE_MEASUREMENT_ID"),
+//       ),
+//     );
+//   } else {
+//     await Firebase.initializeApp();
+//   }
+//   runApp(const MyApp());
+//   // SystemUiOverlayStyle systemUiOverlayStyle = const SystemUiOverlayStyle(
+//   //   statusBarColor: Colors.transparent,
+//   //   statusBarIconBrightness: Brightness.dark,
+//   // );
+//   // SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
+// }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

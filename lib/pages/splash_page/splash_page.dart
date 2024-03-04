@@ -12,7 +12,7 @@ class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 5), () {
+    Timer(Duration(seconds: 10), () {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
           builder: (_) => HomePage(),
@@ -48,7 +48,7 @@ class _SplashPageState extends State<SplashPage> {
                   TextSpan(
                     text: 'Your Life Guide\n',
                     style: TextStyle(
-                      fontSize: 24,
+                      fontSize: 18,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                     ),
@@ -59,7 +59,7 @@ class _SplashPageState extends State<SplashPage> {
                   TextSpan(
                     text: 'Log in to see more',
                     style: TextStyle(
-                      fontSize: 20,
+                      fontSize: 18,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                     ),
@@ -73,6 +73,23 @@ class _SplashPageState extends State<SplashPage> {
               width: 200,
               height: 200,
             ),
+            ElevatedButton(
+            onPressed: () {
+              
+            },
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.white, 
+               minimumSize: Size(150, 50),
+            ),
+            child: Text(
+              'Log in',
+              style: TextStyle(
+                fontSize: 18,
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
           ],
         ),
       ),
