@@ -20,6 +20,8 @@ dependencies:
   flutter_screenutil: ^5.8.4
   firebase_core: ^2.24.2
   firebase_auth: ^4.4.0
+  file_picker: ^4.0.0
+  firebase_storage: ^11.6.7
 
 dev_dependencies:
   flutter_test:

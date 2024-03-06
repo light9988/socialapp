@@ -4,7 +4,7 @@ import 'package:xhs/pages/message_page/message_page.dart';
 import 'package:xhs/pages/mine_page/mine_page.dart';
 import 'package:xhs/pages/video_page/video_page.dart';
 import 'package:get/get.dart';
-
+import 'package:file_picker/file_picker.dart';
 import 'home_controller.dart';
 
 class HomePage extends StatelessWidget {
@@ -33,8 +33,12 @@ class HomePage extends StatelessWidget {
           child: BottomNavigationBar(
             elevation: 0,
             iconSize: 24,
-            backgroundColor: homeController.currentIndex.value == 1 ? Colors.black : Colors.white,
-            selectedItemColor: homeController.currentIndex.value == 1 ? Colors.white : Colors.black,
+            backgroundColor: homeController.currentIndex.value == 1
+                ? Colors.black
+                : Colors.white,
+            selectedItemColor: homeController.currentIndex.value == 1
+                ? Colors.white
+                : Colors.black,
             unselectedItemColor: const Color(0xff999999),
             type: BottomNavigationBarType.fixed,
             currentIndex: homeController.currentIndex.value,
@@ -56,6 +60,7 @@ class HomePage extends StatelessWidget {
                   color: Colors.red,
                 ),
                 label: "",
+
               ),
               BottomNavigationBarItem(
                 icon: SizedBox.shrink(),
