@@ -5,7 +5,6 @@ class SDateUtils {
   factory SDateUtils() => _instance;
   static final SDateUtils _instance = SDateUtils._internal();
 
-  /// 传入时间字符串2022-12-21T07:30:00
   static String formatDate(String? date, {String pattern = "yyyy-MM-dd"}) {
     date ??= DateTime.now().toString();
     DateTime dateTime = DateTime.tryParse(date)!;

@@ -6,13 +6,13 @@ class ApiClient {
   factory ApiClient() => _instance;
   static final ApiClient _instance = ApiClient._internal();
 
-  // 获取首页"发现"数据
+
   Future getIndexData() async {
     await Future.delayed(const Duration(seconds: 1));
     return await Future.value(Mock.indexData);
   }
 
-  // 点击首页"发现"卡片，进入详情数据
+ 
   Future getIndexDetailDataById(int id) async {
     await Future.delayed(const Duration(seconds: 1));
     for (var v in Mock.cardDetailDataList) {
