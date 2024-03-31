@@ -16,6 +16,12 @@ void main() {
   runApp(const MyApp());
 }
 
+// void main() async {
+//   WidgetsFlutterBinding.ensureInitialized();
+//   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+//   runApp(const MyApp());
+// }
+
 // // deply to firebase:
 // void main() async {
 //   WidgetsFlutterBinding.ensureInitialized();
@@ -36,6 +42,7 @@ void main() {
 //     await Firebase.initializeApp();
 //   }
 //   runApp(const MyApp());
+
 //   // SystemUiOverlayStyle systemUiOverlayStyle = const SystemUiOverlayStyle(
 //   //   statusBarColor: Colors.transparent,
 //   //   statusBarIconBrightness: Brightness.dark,

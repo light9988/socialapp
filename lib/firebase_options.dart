@@ -49,6 +49,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '796910062834',
     projectId: 'xhs1-b4cdf',
     authDomain: 'xhs1-b4cdf.firebaseapp.com',
+    databaseURL: 'https://xhs1-b4cdf-default-rtdb.firebaseio.com',
     storageBucket: 'xhs1-b4cdf.appspot.com',
     measurementId: 'G-TJ6DYE2QMR',
   );
@@ -58,6 +59,7 @@ class DefaultFirebaseOptions {
     appId: '1:796910062834:android:8d8612bd5aee62b1aa146b',
     messagingSenderId: '796910062834',
     projectId: 'xhs1-b4cdf',
+    databaseURL: 'https://xhs1-b4cdf-default-rtdb.firebaseio.com',
     storageBucket: 'xhs1-b4cdf.appspot.com',
   );
 
@@ -66,6 +68,7 @@ class DefaultFirebaseOptions {
     appId: '1:796910062834:ios:bd83b7d543756c21aa146b',
     messagingSenderId: '796910062834',
     projectId: 'xhs1-b4cdf',
+    databaseURL: 'https://xhs1-b4cdf-default-rtdb.firebaseio.com',
     storageBucket: 'xhs1-b4cdf.appspot.com',
     iosClientId: '796910062834-jp25mkmk3t69optqm9lpr8i6ut8tjfru.apps.googleusercontent.com',
     iosBundleId: 'com.example.xhs',
@@ -76,6 +79,7 @@ class DefaultFirebaseOptions {
     appId: '1:796910062834:ios:0b348a0a3ddc4f31aa146b',
     messagingSenderId: '796910062834',
     projectId: 'xhs1-b4cdf',
+    databaseURL: 'https://xhs1-b4cdf-default-rtdb.firebaseio.com',
     storageBucket: 'xhs1-b4cdf.appspot.com',
     iosClientId: '796910062834-vhi84brba7bejj0ek3j50115fi513mfh.apps.googleusercontent.com',
     iosBundleId: 'com.example.xhs.RunnerTests',
