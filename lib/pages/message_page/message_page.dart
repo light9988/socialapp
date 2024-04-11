@@ -29,9 +29,9 @@ class MessagePage extends StatelessWidget {
             ),
           ),
           buildMessage("assets/images/message.png","Message Notification","Sunday", "Event Notification: We will meet in the Spring"),
-          buildMessage("assets/images/message.png","momo", "Monday", "Hello"),  
-          buildMessage("assets/images/message.png","Alice", "Tuesday", "Where is the photo taken?"), 
-          buildMessage("assets/images/message.png","Doris", "Today", "I'd like to buy this."), 
+          buildMessage("assets/images/b4.png","momo", "Monday", "Hello"),  
+          buildMessage("assets/images/b5.png","Glori", "Tuesday", "Where is the photo taken?"), 
+          buildMessage("assets/images/b6.png","Doris", "Today", "I'd like to buy this."), 
         ],
       ),
     );
