@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:xhs/constants/color_plate.dart';
 import 'package:xhs/models/card_data.dart';
 import 'package:get/get.dart';
-
 import 'mine_controller.dart';
+import 'package:xhs/pages/mine_page/mine_page_data.dart';
+
 
 class MinePage extends StatelessWidget {
   MinePage({Key? key}) : super(key: key);
@@ -27,7 +28,6 @@ class MinePage extends StatelessWidget {
                 sliver: SliverToBoxAdapter(child: _buildHeader()),
               ),
 
-              /// SliverPersistentHeader 的功能是当滑动到 CustomScrollView 的顶部时，可以将组件固定在顶部
               SliverPersistentHeader(
                 pinned: true,
                 delegate: SliverHeaderDelegate.fixedHeight(
@@ -65,7 +65,7 @@ class MinePage extends StatelessWidget {
                     handle: NestedScrollView.sliverOverlapAbsorberHandleFor(
                         context),
                   ),
-                  SliverToBoxAdapter(child: buildDiscoverPage()),
+                  SliverToBoxAdapter(child: buildMyPage()),
                 ],
               );
             }),
@@ -160,7 +160,7 @@ class MinePage extends StatelessWidget {
                               Padding(
                                 padding: EdgeInsets.only(bottom: 4.0),
                                 child: Text(
-                                  "Amy",
+                                  "Alice",
                                   style: TextStyle(
                                       color: Colors.white, fontSize: 20),
                                 ),
@@ -184,7 +184,7 @@ class MinePage extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(
                             horizontal: 8, vertical: 2),
                         decoration: const ShapeDecoration(
-                            shape: StadiumBorder(), color: ColorPlate.black6),
+                            shape: StadiumBorder(), color: Colors.grey),
                         child: const Text("Lion",
                             style:
                                 TextStyle(color: Colors.white, fontSize: 10)),
@@ -193,7 +193,7 @@ class MinePage extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(
                             horizontal: 8, vertical: 2),
                         decoration: const ShapeDecoration(
-                            shape: StadiumBorder(), color: ColorPlate.black6),
+                            shape: StadiumBorder(), color: Colors.grey),
                         child: const Text("United States",
                             style:
                                 TextStyle(color: Colors.white, fontSize: 10)),
@@ -232,11 +232,9 @@ class MinePage extends StatelessWidget {
                           Column(
                             children: [
                               Text("500K",
-                                  style: TextStyle(
-                                      color: Colors.white, fontSize: 12)),
+                                  style: TextStyle(color: Colors.white, fontSize: 12)),
                               Text("Likes&Col",
-                                  style: TextStyle(
-                                      color: Colors.white, fontSize: 12))
+                                  style: TextStyle(color: Colors.white, fontSize: 12))
                             ],
                           ),
                         ],
@@ -257,7 +255,7 @@ class MinePage extends StatelessWidget {
                                   side: BorderSide(color: Colors.white)),
                             ),
                             child: const Text("Profile",
-                                style: TextStyle(color: Colors.white)),
+                                style: TextStyle(color: Colors.white, fontSize: 12)),
                           ),
                           Container(
                             margin: const EdgeInsets.only(left: 20),
@@ -289,7 +287,7 @@ class MinePage extends StatelessWidget {
     );
   }
 
-  Widget buildDiscoverPage() {
+  Widget buildMyPage() {
     return Column(
       // physics: NeverScrollableScrollPhysics(),
       // padding: EdgeInsets.zero,
@@ -327,7 +325,7 @@ class MinePage extends StatelessWidget {
             ClipRRect(
               borderRadius:
                   const BorderRadius.vertical(top: Radius.circular(4)),
-              child: Image.network(
+              child: Image.asset(
                 cardData.cover,
                 width: Get.width / 2,
                 height: Get.width / 2 + 30,
@@ -344,7 +342,7 @@ class MinePage extends StatelessWidget {
               child: Row(
                 children: [
                   ClipOval(
-                    child: Image.network(cardData.avatar,
+                    child: Image.asset(cardData.avatar,
                         width: 20, height: 20, fit: BoxFit.cover),
                   ),
                   Padding(
@@ -368,7 +366,6 @@ typedef SliverHeaderBuilder = Widget Function(
     BuildContext context, double shrinkOffset, bool overlapsContent);
 
 class SliverHeaderDelegate extends SliverPersistentHeaderDelegate {
-  // child 为 header
   SliverHeaderDelegate({
     required this.maxHeight,
     this.minHeight = 0,
@@ -376,7 +373,6 @@ class SliverHeaderDelegate extends SliverPersistentHeaderDelegate {
   })  : builder = ((a, b, c) => child),
         assert(minHeight <= maxHeight && minHeight >= 0);
 
-  //最大和最小高度相同
   SliverHeaderDelegate.fixedHeight({
     required double height,
     required Widget child,
@@ -384,7 +380,6 @@ class SliverHeaderDelegate extends SliverPersistentHeaderDelegate {
         maxHeight = height,
         minHeight = height;
 
-  //需要自定义builder时使用
   SliverHeaderDelegate.builder({
     required this.maxHeight,
     this.minHeight = 0,
@@ -402,15 +397,13 @@ class SliverHeaderDelegate extends SliverPersistentHeaderDelegate {
     bool overlapsContent,
   ) {
     Widget child = builder(context, shrinkOffset, overlapsContent);
-    //测试代码：如果在调试模式，且子组件设置了key，则打印日志
+
     assert(() {
       if (child.key != null) {
         print('${child.key}: shrink: $shrinkOffset，overlaps:$overlapsContent');
       }
       return true;
     }());
-    // 让 header 尽可能充满限制的空间；宽度为 Viewport 宽度，
-    // 高度随着用户滑动在[minHeight,maxHeight]之间变化。
     return SizedBox.expand(child: child);
   }
 

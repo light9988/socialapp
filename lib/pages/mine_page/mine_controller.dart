@@ -3,8 +3,10 @@ import 'package:xhs/api/api_client.dart';
 import 'package:xhs/constants/pages.dart';
 import 'package:xhs/models/card_data.dart';
 import 'package:get/get.dart';
+import 'package:xhs/pages/mine_page/mine_page_data.dart';
 
-class MineController extends GetxController with GetSingleTickerProviderStateMixin {
+class MineController extends GetxController
+    with GetSingleTickerProviderStateMixin {
   late TabController tabController;
   List<CardData> data = [];
 
@@ -16,11 +18,15 @@ class MineController extends GetxController with GetSingleTickerProviderStateMix
     getIndexData();
   }
 
+  // void getIndexData() {
+  //   ApiClient().getIndexData().then((response) {
+  //     data = response;
+  //     update();
+  //   });
+  // }
   void getIndexData() {
-    ApiClient().getIndexData().then((response) {
-      data = response;
-      update();
-    });
+    data = MyPageData.indexData;
+    update();
   }
 
   void openIndexDetailPage(int id) {

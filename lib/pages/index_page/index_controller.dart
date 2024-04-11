@@ -11,7 +11,7 @@ class IndexController extends GetxController with GetSingleTickerProviderStateMi
   @override
   void onInit() {
     super.onInit();
-    tabController = TabController(length: 3, vsync: this, initialIndex: 1);
+    tabController = TabController(length: 4, vsync: this, initialIndex: 1);
     getIndexData();
   }
 

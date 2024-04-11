@@ -28,7 +28,6 @@ class ApiClient {
     return await Future.value(Mock.commentList);
   }
 
-
   Future getVideoList() async {
     await Future.delayed(const Duration(seconds: 1));
     return await Future.value(Mock.videoList);

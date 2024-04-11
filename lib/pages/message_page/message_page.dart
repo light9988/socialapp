@@ -28,9 +28,10 @@ class MessagePage extends StatelessWidget {
               ],
             ),
           ),
-          buildMessage(),
-          buildMessage(),
-          buildMessage(),
+          buildMessage("assets/images/message.png","Message Notification","Sunday", "Event Notification: We will meet in the Spring"),
+          buildMessage("assets/images/message.png","momo", "Monday", "Hello"),  
+          buildMessage("assets/images/message.png","Alice", "Tuesday", "Where is the photo taken?"), 
+          buildMessage("assets/images/message.png","Doris", "Today", "I'd like to buy this."), 
         ],
       ),
     );
@@ -58,7 +59,7 @@ class MessagePage extends StatelessWidget {
     );
   }
 
-  Widget buildMessage() {
+  Widget buildMessage(String imagePath, String title, String day, String content) {
     return Padding(
       padding: const EdgeInsets.all(12.0),
       child: Row(
@@ -71,21 +72,21 @@ class MessagePage extends StatelessWidget {
               color: Colors.blue.withOpacity(0.2),
               shape: BoxShape.circle,
             ),
-            child: Image.asset("assets/images/message.png", width: 30, height: 30),
+            child: Image.asset(imagePath, width: 30, height: 30),
           ),
-          const Expanded(
+          Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("Message Notification", style: TextStyle(fontSize: 16)),
-                    Text("Sunday", style: TextStyle(fontSize: 12, color: ColorPlate.black9)),
+                    Text(title, style: TextStyle(fontSize: 16)),
+                    Text(day, style: TextStyle(fontSize: 12, color: ColorPlate.black9)),
                   ],
                 ),
                 Text(
-                  "Event Notification: We will meet in the Spring",
+                  content,
                   style: TextStyle(color: ColorPlate.black9),
                   overflow: TextOverflow.ellipsis,
                   maxLines: 1,

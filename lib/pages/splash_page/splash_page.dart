@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:xhs/pages/home_page/home_page.dart';
 import 'package:get/get.dart';
+import 'package:xhs/pages/login_page/login_page.dart';
 
 class SplashPage extends StatefulWidget {
   @override
@@ -75,7 +76,7 @@ class _SplashPageState extends State<SplashPage> {
             ),
             ElevatedButton(
             onPressed: () {
-              Get.off(HomePage());
+              Get.off(LoginPage());
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.white, 

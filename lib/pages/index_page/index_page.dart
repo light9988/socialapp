@@ -50,8 +50,9 @@ class IndexPage extends StatelessWidget {
                     controller: controller.tabController,
                     children: [
                       buildFollowPage(),
-                      buildDiscoverPage(),
-                      buildShoppingPage(),
+                      buildExplorePage(),
+                      buildNearbyPage(),
+                      buildShopPage(),
                     ],
                   );
                 },
@@ -67,7 +68,7 @@ class IndexPage extends StatelessWidget {
     return const Center(child: Text("Developing"));
   }
 
-  Widget buildDiscoverPage() {
+  Widget buildExplorePage() {
     return ListView(
       children: [
         Row(
@@ -84,7 +85,11 @@ class IndexPage extends StatelessWidget {
     );
   }
 
-  Widget buildShoppingPage() {
+ Widget buildNearbyPage() {
+    return const Center(child: Text("Developing"));
+  }
+
+  Widget buildShopPage() {
     return const Center(child: Text("Developing"));
   }
 
@@ -104,7 +109,7 @@ class IndexPage extends StatelessWidget {
           children: [
             ClipRRect(
               borderRadius: const BorderRadius.vertical(top: Radius.circular(4)),
-              child: Image.network(
+              child: Image.asset(
                 cardData.cover,
                 width: Get.width / 2,
                 height: Get.width / 2 + 30,
@@ -120,7 +125,7 @@ class IndexPage extends StatelessWidget {
               child: Row(
                 children: [
                   ClipOval(
-                    child: Image.network(cardData.avatar, width: 20, height: 20, fit: BoxFit.cover),
+                    child: Image.asset(cardData.avatar, width: 20, height: 20, fit: BoxFit.cover),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 8.0),

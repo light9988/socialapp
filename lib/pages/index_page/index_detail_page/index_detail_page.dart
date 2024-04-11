@@ -76,7 +76,7 @@ class IndexDetailPage extends StatelessWidget {
       height: Get.height * 2 / 3,
       child: Swiper(
         itemBuilder: (BuildContext context, int index) {
-          return Image.network(
+          return Image.asset(
             controller.cardDetailData.images[index],
             width: Get.width,
             fit: BoxFit.contain,
@@ -145,7 +145,7 @@ class IndexDetailPage extends StatelessWidget {
                     width: 40,
                     height: 40,
                     child: ClipOval(
-                      child: Image.network(
+                      child: Image.asset(
                         e.avatar,
                         fit: BoxFit.cover,
                       ),
