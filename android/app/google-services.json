@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "435190786540",
+    "firebase_url": "https://xhsdemo-default-rtdb.firebaseio.com",
+    "project_id": "xhsdemo",
+    "storage_bucket": "xhsdemo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:435190786540:android:6286ba972ee9c7bb2378c9",
+        "android_client_info": {
+          "package_name": "com.example.xhs"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfmtdnIP1cVl5cSqRaNSebKSR6dvAmLE0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

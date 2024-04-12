@@ -23,7 +23,7 @@ class IndexDetailPage extends StatelessWidget {
             title: Row(
               children: [
                 ClipOval(
-                    child: Image.network(
+                    child: Image.asset(
                   controller.cardDetailData.avatar,
                   width: 40,
                   height: 40,
@@ -132,7 +132,8 @@ class IndexDetailPage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "Comments ${controller.commentList.length}",
+            // "Comments ${controller.commentList.length}",
+             "Comments ${controller.cardDetailData.comment}",
             style: const TextStyle(color: ColorPlate.black6),
           ),
           ...controller.commentList.map((e) {

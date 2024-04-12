@@ -22,24 +22,40 @@ class IndexPage extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Image.asset("assets/images/menu.png", width: 30, height: 30),  //to be hamburger menu of setting
+                  Image.asset("assets/images/menu.png",
+                      width: 30, height: 30), //to be hamburger menu of setting
                   SizedBox(
                     height: 30,
-                    width: 400,
+                    width: 300,
                     child: TabBar(
                       labelColor: Colors.black,
                       dividerColor: Colors.transparent,
                       indicatorColor: ColorPlate.primary,
                       controller: controller.tabController,
-                      tabs: const [
-                        Tab(text: "Follow  "),
-                        Tab(text: "Explore  "),
-                        Tab(text: "Nearby  "),
-                        Tab(text: "Shop"),
+                      // tabs: const [
+                      //   Tab(text: "Follow  "),
+                      //   Tab(text: "Explore  "),
+                      //   Tab(text: "Nearby  "),
+                      //   Tab(text: "Shop  "),
+                      // ],
+                      tabs: [
+                        for (final tabText in [
+                          "Follow  ",
+                          "Explore  ",
+                          "Nearby  ",
+                          "Shop  "
+                        ])
+                          Tab(
+                            child: DefaultTextStyle(
+                              style: TextStyle(fontSize: 13, color: Colors.black),
+                              child: Text(tabText),
+                            ),
+                          ),
                       ],
                     ),
                   ),
-                  Image.asset("assets/images/search.png", width: 30, height: 30), //to be real serch function
+                  Image.asset("assets/images/search.png",
+                      width: 30, height: 30), //to be real serch function
                 ],
               ),
             ),
@@ -77,7 +93,9 @@ class IndexPage extends StatelessWidget {
               children: controller.data.map((e) => buildCardItem(e)).toList(),
             ),
             Column(
-              children: controller.data.reversed.map((e) => buildCardItem(e)).toList(),
+              children: controller.data.reversed
+                  .map((e) => buildCardItem(e))
+                  .toList(),
             ),
           ],
         ),
@@ -85,7 +103,7 @@ class IndexPage extends StatelessWidget {
     );
   }
 
- Widget buildNearbyPage() {
+  Widget buildNearbyPage() {
     return const Center(child: Text("Developing"));
   }
 
@@ -108,7 +126,8 @@ class IndexPage extends StatelessWidget {
         child: Column(
           children: [
             ClipRRect(
-              borderRadius: const BorderRadius.vertical(top: Radius.circular(4)),
+              borderRadius:
+                  const BorderRadius.vertical(top: Radius.circular(4)),
               child: Image.asset(
                 cardData.cover,
                 width: Get.width / 2,
@@ -118,14 +137,16 @@ class IndexPage extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4),
-              child: Text(cardData.content, maxLines: 2, overflow: TextOverflow.ellipsis),
+              child: Text(cardData.content,
+                  maxLines: 2, overflow: TextOverflow.ellipsis),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4),
               child: Row(
                 children: [
                   ClipOval(
-                    child: Image.asset(cardData.avatar, width: 20, height: 20, fit: BoxFit.cover),
+                    child: Image.asset(cardData.avatar,
+                        width: 20, height: 20, fit: BoxFit.cover),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 8.0),
@@ -133,7 +154,7 @@ class IndexPage extends StatelessWidget {
                   ),
                   const Spacer(),
                   Image.asset("assets/images/like.png", width: 20),
-                  Text(cardData.fav.toString())
+                  Text(cardData.like.toString())
                 ],
               ),
             )

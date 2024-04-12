@@ -4,7 +4,7 @@ import 'package:xhs/models/comment.dart';
 import 'package:xhs/models/video.dart';
 
 class MyPageData {
-  static List<CardData> indexData = [
+  static List<CardData> indexMyPageData = [
     CardData(
       1,
       2001,
@@ -52,7 +52,8 @@ class MyPageData {
    
   ];
 
-  static List<CardDetailData> cardDetailDataList = [
+  // static List<CardDetailData> cardDetailDataList = [
+    static List<CardDetailData> myCardDetailDataList = [
     CardDetailData(
       1,
       2001,

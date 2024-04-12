@@ -134,7 +134,7 @@ class VideoPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   ClipOval(
-                    child: Image.network(
+                    child: Image.asset(
                       video.head,
                       height: 40,
                       width: 40,

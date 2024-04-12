@@ -3,12 +3,14 @@ import 'package:xhs/api/api_client.dart';
 import 'package:xhs/constants/pages.dart';
 import 'package:xhs/models/card_data.dart';
 import 'package:get/get.dart';
+import 'package:xhs/models/card_detail_data.dart';
 import 'package:xhs/pages/mine_page/mine_page_data.dart';
 
 class MineController extends GetxController
     with GetSingleTickerProviderStateMixin {
   late TabController tabController;
   List<CardData> data = [];
+  List<CardDetailData> cardDetaildata = [];
 
   @override
   void onInit() {
@@ -25,11 +27,17 @@ class MineController extends GetxController
   //   });
   // }
   void getIndexData() {
-    data = MyPageData.indexData;
+    data = MyPageData.indexMyPageData;
     update();
   }
 
   void openIndexDetailPage(int id) {
     Get.toNamed(Pages.indexDetail, arguments: {"id": id});
   }
+
+  // void openIndexDetailPage(int id) {
+  //   CardDetailData cardDetailData = MyPageData.myCardDetailDataList.firstWhere((detail) => detail.id == id);
+  //   Get.toNamed(Pages.indexDetail,
+  //       arguments: {"id": id, "cardDetailData": cardDetailData});
+  // }
 }

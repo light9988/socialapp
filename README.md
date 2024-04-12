@@ -1,4 +1,3 @@
-
 ![demo page](assets/images/xhs.png)
 
 This is a full stack social media mobile app developed using Flutter and Dart, simulation to an exsiting app.
@@ -16,7 +15,8 @@ This is a full stack social media mobile app developed using Flutter and Dart, s
 
 - Clone the repository to your local machine.
 - Make sure you have Flutter and Dart installed.
-- Set up Firebase for authentication, storage, and real-time database.
+- Set up Firebase for authentication, Analytics dashboard, Firestore and real-time database.
 - Update the Firebase configuration in the app to connect to your Firebase project.
 - Run flutter pub get to install dependencies.
 - Launch the app on your preferred platform using flutter run.
+
