@@ -42,6 +42,10 @@ class _LoginPageState extends State<LoginPage> {
           );
           final user = authResult.user;
           logger.i('Signed in: ${user?.uid})');
+          if (!agreed) {
+          showAgreementError();
+          return;
+        }
           Get.snackbar(
             "Success",
             "You have logged in successfully.",
@@ -56,6 +60,10 @@ class _LoginPageState extends State<LoginPage> {
           );
           final user = authResult.user;
           logger.i('New registered user: ${user?.uid}');
+          if (!agreed) {
+          showAgreementError();
+          return;
+        }
           Get.snackbar(
             "Success",
             "New user registered and logged in.",
@@ -71,10 +79,6 @@ class _LoginPageState extends State<LoginPage> {
           showDefaultError();
         }
       }
-    }
-      if (!agreed) {
-      showAgreementError();
-      return;
     }
   }
 
@@ -175,7 +179,7 @@ class _LoginPageState extends State<LoginPage> {
           onPressed: moveToRegister,
           child: const Text("Create a new account",
               style: TextStyle(
-                  fontSize: 16, color: Color.fromRGBO(15, 105, 179, 1))),
+                  fontSize: 14, color: Colors.black)),
         )
       ];
     } else {
@@ -190,7 +194,7 @@ class _LoginPageState extends State<LoginPage> {
           onPressed: moveToLogin,
           child: const Text("Have an account? Please log in",
               style: TextStyle(
-                  fontSize: 16, color: Color.fromRGBO(15, 105, 179, 1))),
+                  fontSize: 14, color: Colors.black)),
         )
       ];
     }
