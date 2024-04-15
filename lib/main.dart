@@ -57,26 +57,26 @@ class MyApp extends StatelessWidget {
 //   // SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
 // }
 
-  // @override
-  // Widget build(BuildContext context) {
-  //   return ScreenUtilInit(
-  //     designSize: const Size(750, 1334),
-  //     minTextAdapt: true,
-  //     splitScreenMode: true,
-  //     builder: (context, child) {
-  //       return GetMaterialApp(
-  //         title: 'Little Red Book',
-  //         builder: BotToastInit(),
-  //         navigatorObservers: [BotToastNavigatorObserver()],
-  //         theme: ThemeData(
-  //           useMaterial3: true,
-  //           primarySwatch: Colors.red,
-  //         ),
-  //         getPages: Routes.getPages,
-  //         // initialRoute: Pages.home,
-  //         initialRoute: Pages.splash,
-  //       );
-  //     },
-  //   );
-  // }
+// @override
+// Widget build(BuildContext context) {
+//   return ScreenUtilInit(
+//     designSize: const Size(750, 1334),
+//     minTextAdapt: true,
+//     splitScreenMode: true,
+//     builder: (context, child) {
+//       return GetMaterialApp(
+//         title: 'Little Red Book',
+//         builder: BotToastInit(),
+//         navigatorObservers: [BotToastNavigatorObserver()],
+//         theme: ThemeData(
+//           useMaterial3: true,
+//           primarySwatch: Colors.red,
+//         ),
+//         getPages: Routes.getPages,
+//         // initialRoute: Pages.home,
+//         initialRoute: Pages.splash,
+//       );
+//     },
+//   );
+// }
 

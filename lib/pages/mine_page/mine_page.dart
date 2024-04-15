@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:xhs/constants/color_plate.dart';
+import 'package:xhs/main.dart';
 import 'package:xhs/models/card_data.dart';
 import 'package:get/get.dart';
 import 'mine_controller.dart';
 import 'package:xhs/pages/mine_page/mine_page_data.dart';
+import 'package:xhs/pages/login_page/login_page.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:logger/logger.dart';
 
+final logger = Logger();
+
+User? _currentUser = FirebaseAuth.instance.currentUser;
+final userUid = _currentUser?.uid;
 
 class MinePage extends StatelessWidget {
   MinePage({Key? key}) : super(key: key);
@@ -12,6 +20,7 @@ class MinePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    logger.i('current user uid: $userUid)');
     return SafeArea(
       child: Scaffold(
         body: NestedScrollView(
@@ -90,8 +99,6 @@ class MinePage extends StatelessWidget {
       onTap: () {},
       child: Stack(
         children: [
-          // Image.network(
-          //   "https://unsplash.com/photos/landscape-photo-of-new-york-empire-state-building-5omwAMDxmkU.jpeg",
           Image.asset(
             "assets/images/bg.png",
             width: Get.width,
@@ -143,8 +150,6 @@ class MinePage extends StatelessWidget {
                               shape: BoxShape.circle,
                             ),
                             child: ClipOval(
-                              // child: Image.network(
-                              //   "https://www.google.com/search?sca_esv=a7c4cc63e26e5a70&sxsrf=ACQVn09p83XOirj-UkEmmkn7EzgmRxKNRg:1709343558776&q=taylor+swift&tbm=isch&source=lnms&sa=X&ved=2ahUKEwiptvr8uNSEAxV3AjQIHT7cDTYQ0pQJegQIDRAB&biw=1440&bih=669&dpr=2#imgrc=G5JeSalK0CY9tM.jpeg",
                               child: Image.asset(
                                 "assets/images/profile.png",
                                 fit: BoxFit.cover,
@@ -165,8 +170,10 @@ class MinePage extends StatelessWidget {
                                       color: Colors.white, fontSize: 20),
                                 ),
                               ),
-                              Text("ID：123456789",
-                                  style: TextStyle(color: ColorPlate.grey)),
+                              Text(
+                                   "ID: 123456789",
+                                  // "ID: $userUid",
+                                  style: TextStyle(color: Colors.white)),
                             ],
                           ),
                         )
@@ -204,41 +211,43 @@ class MinePage extends StatelessWidget {
                 Row(
                   children: [
                     // const Expanded(
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Column(
-                            children: [
-                              Text("1",
-                                  style: TextStyle(
-                                      color: Colors.white, fontSize: 12)),
-                              Text("Following",
-                                  style: TextStyle(
-                                      color: Colors.white, fontSize: 12))
-                            ],
-                          ),
-                          SizedBox(width: 10),
-                          Column(
-                            children: [
-                              Text("300K",
-                                  style: TextStyle(
-                                      color: Colors.white, fontSize: 12)),
-                              Text("Followers",
-                                  style: TextStyle(
-                                      color: Colors.white, fontSize: 12))
-                            ],
-                          ),
-                          SizedBox(width: 10),
-                          Column(
-                            children: [
-                              Text("500K",
-                                  style: TextStyle(color: Colors.white, fontSize: 12)),
-                              Text("Likes&Col",
-                                  style: TextStyle(color: Colors.white, fontSize: 12))
-                            ],
-                          ),
-                        ],
-                      ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          children: [
+                            Text("1",
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 12)),
+                            Text("Following",
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 12))
+                          ],
+                        ),
+                        SizedBox(width: 10),
+                        Column(
+                          children: [
+                            Text("300K",
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 12)),
+                            Text("Followers",
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 12))
+                          ],
+                        ),
+                        SizedBox(width: 10),
+                        Column(
+                          children: [
+                            Text("500K",
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 12)),
+                            Text("Likes&Col",
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 12))
+                          ],
+                        ),
+                      ],
+                    ),
                     // ),
                     Expanded(
                       child: Row(
@@ -255,7 +264,8 @@ class MinePage extends StatelessWidget {
                                   side: BorderSide(color: Colors.white)),
                             ),
                             child: const Text("Profile",
-                                style: TextStyle(color: Colors.white, fontSize: 12)),
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 12)),
                           ),
                           Container(
                             margin: const EdgeInsets.only(left: 20),

@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:xhs/main.dart';
 import 'package:xhs/pages/home_page/home_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:logger/logger.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 final logger = Logger();
 
 class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
+
   @override
   State<StatefulWidget> createState() => _LoginPageState();
 }
@@ -41,11 +45,12 @@ class _LoginPageState extends State<LoginPage> {
             password: _password,
           );
           final user = authResult.user;
-          logger.i('Signed in: ${user?.uid})');
+          final userUid = user?.uid;
+          logger.i('Signed in as user: $user useruid: $userUid');
           if (!agreed) {
-          showAgreementError();
-          return;
-        }
+            showAgreementError();
+            return;
+          }
           Get.snackbar(
             "Success",
             "You have logged in successfully.",
@@ -59,11 +64,12 @@ class _LoginPageState extends State<LoginPage> {
             password: _password,
           );
           final user = authResult.user;
-          logger.i('New registered user: ${user?.uid}');
+          final userUid = user?.uid;
+          logger.i('New registered user: $user useruid: $userUid');
           if (!agreed) {
-          showAgreementError();
-          return;
-        }
+            showAgreementError();
+            return;
+          }
           Get.snackbar(
             "Success",
             "New user registered and logged in.",
@@ -91,7 +97,8 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   void showAgreementError() {
-    showErrorMessage('Please agree to the user agreement and data privacy rule.');
+    showErrorMessage(
+        'Please agree to the user agreement and data privacy rule.');
   }
 
   void showErrorMessage(String errorMessage) {
@@ -99,7 +106,7 @@ class _LoginPageState extends State<LoginPage> {
       'Error',
       errorMessage,
       snackPosition: SnackPosition.BOTTOM,
-      backgroundColor: Colors.red,
+      backgroundColor: Color(0xFFff2e4d),
       colorText: Colors.white,
     );
   }
@@ -115,6 +122,23 @@ class _LoginPageState extends State<LoginPage> {
       _formType = FormType.login;
     });
   }
+
+// Future<void> linkGoogle() async {
+//     try {
+//       final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+//       final GoogleSignInAuthentication? googleAuth = await googleUser?.authentication;
+//       final OAuthCredential googleCredential = GoogleAuthProvider.credential(
+//         accessToken: googleAuth?.accessToken,
+//         idToken: googleAuth?.idToken,
+//       );
+//       final UserCredential googleUserCredential =
+//           await FirebaseAuth.instance.signInWithCredential(googleCredential);
+
+//       logger.i('Linked  to Google account successfully.');
+//     } catch (e) {
+//       logger.e('Error linking to Google account: $e');
+//     }
+//   }
 
   @override
   Widget build(BuildContext context) {
@@ -142,6 +166,7 @@ class _LoginPageState extends State<LoginPage> {
               const SizedBox(height: 20),
               ...buildSubmitButtons(),
               const SizedBox(height: 20),
+              // ...buildLinktoGoogleButton(),
               buildAgreementRow(),
             ],
           ),
@@ -153,12 +178,22 @@ class _LoginPageState extends State<LoginPage> {
   List<Widget> buildInputs() {
     return [
       TextFormField(
-        decoration: const InputDecoration(labelText: 'Email', border: UnderlineInputBorder(borderSide: BorderSide(width: 1.0), ),),
+        decoration: const InputDecoration(
+          labelText: 'Email',
+          border: UnderlineInputBorder(
+            borderSide: BorderSide(width: 1.0),
+          ),
+        ),
         validator: (value) => value!.isEmpty ? 'Please enter your email' : null,
         onSaved: (value) => _email = value!,
       ),
       TextFormField(
-        decoration: const InputDecoration(labelText: 'Password', border: UnderlineInputBorder(borderSide: BorderSide(width: 1.0), ),),
+        decoration: const InputDecoration(
+          labelText: 'Password',
+          border: UnderlineInputBorder(
+            borderSide: BorderSide(width: 1.0),
+          ),
+        ),
         obscureText: true,
         validator: (value) =>
             value!.isEmpty ? 'Please enter your password' : null,
@@ -178,8 +213,7 @@ class _LoginPageState extends State<LoginPage> {
         TextButton(
           onPressed: moveToRegister,
           child: const Text("Create a new account",
-              style: TextStyle(
-                  fontSize: 14, color: Colors.black)),
+              style: TextStyle(fontSize: 14, color: Colors.black)),
         )
       ];
     } else {
@@ -187,14 +221,12 @@ class _LoginPageState extends State<LoginPage> {
         ElevatedButton(
           onPressed: validateAndSubmit,
           child: const Text("Create a new account",
-              style: TextStyle(
-                  fontSize: 16, color: Colors.black)),
+              style: TextStyle(fontSize: 16, color: Colors.black)),
         ),
         TextButton(
           onPressed: moveToLogin,
           child: const Text("Have an account? Please log in",
-              style: TextStyle(
-                  fontSize: 14, color: Colors.black)),
+              style: TextStyle(fontSize: 14, color: Colors.black)),
         )
       ];
     }
@@ -215,9 +247,9 @@ class _LoginPageState extends State<LoginPage> {
             height: 10,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: agreed ? Colors.red : Colors.white,
+              color: agreed ? Color(0xFFff2e4d) : Colors.white,
               border: Border.all(
-                color: agreed ? Colors.red : Colors.black,
+                color: agreed ? Color(0xFFff2e4d) : Colors.black,
               ),
             ),
             child: const Icon(
@@ -240,7 +272,13 @@ class _LoginPageState extends State<LoginPage> {
   }
 }
 
-
+// Widget buildLinktoGoogleButton() {
+//   return ElevatedButton(
+//     onPressed: linkGoogle,
+//     child: const Text('Link Google Account',
+//         style: TextStyle(fontSize: 16, color: Colors.black)),
+//   );
+// }
 
 
 
